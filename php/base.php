@@ -91,5 +91,17 @@
   foreach($user as $key=>$value) {
     echo "<b>$key</b> : $value <br>";
   }
+  echo "<hr>";
+  
+  $arr = ['Иванов' => "18 april 1956", 'Петров' => "01 june 1956", 'Сидоров' => "18 july 1956",];
+  foreach($arr as $name=>$date) {
+    var_dump("$name $date");
+    $date = explode(" ",$date);
+    $month = $date[1];
+    if ($month == "june" || $month == "july" || $monts == "august") {
+      unset($arr[$name]);
+    }
+  }
+  var_dump($arr);
   
 ?>
