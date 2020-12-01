@@ -41,16 +41,7 @@ $password = password_hash($password, PASSWORD_BCRYPT);
 //Подключаемся к БД
 //14:42 1:12:00
 //&I4tSMxA
-$dbhost = "localhost"; //Адрес сервера
-$dbuser = "ivandp_1335"; //Имя пользователя (логин)
-$dbpass = "&I4tSMxA"; //Пароль от БД
-$dbname = "ivandp_1335"; //Название БД
-$mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-$mysqli->set_charset("utf-8");
-
-if ($mysqli->connect_error) {
-  die("Не удалось подключиться к БД " . $mysqli->connect_error);
-}
+require_once("components/db.php");
 
 //Ищем пользователя с таким-же логином
 $result = $mysqli->query("SELECT * FROM `users` WHERE `login`='$login'")->fetch_assoc();
