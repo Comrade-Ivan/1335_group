@@ -21,6 +21,9 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="lk.php">Личный кабинет</a>
+          <?php if(isset($_SESSION['id']) && $_SESSION['is_admin'] == 1): ?>
+            <a class="nav-item nav-link" href="admin.php">Панель администратора</a>
+          <?php endif; ?>
         </div>
       </div>
       <?php if (isset($_SESSION['id'])): ?>

@@ -1,11 +1,11 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
 session_start();
+require_once("components/db.php");
 if ( !isset($_SESSION['id']) ) {
   exit("Недостаточно прав");  
 }
 $id = $_SESSION['id'];
-require_once("components/db.php");
 if( isset($_POST['name']) ) {
   $columnName = "name";
   $newValue = htmlspecialchars( trim($_POST['name']) );

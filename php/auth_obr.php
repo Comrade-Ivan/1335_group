@@ -20,6 +20,7 @@ if (isset($result) && password_verify($password, $result['password'])) {
   $_SESSION['name'] = $result['name'];
   $_SESSION['lastname'] = $result['lastname'];
   $_SESSION['birthday'] = $result['birthday'];
+  $_SESSION['is_admin'] = $result['is_admin'];
   header("Location: lk.php");
   //exit("<script>location.href = 'lk.php'</script>");
   //exit("Пользователь успешно вошел");
